@@ -8,6 +8,29 @@ const count = document.getElementById('count');
 const total = document.getElementById('total');
 const movieSelect = document.getElementById('movie');
 
-const ticketPrice = movieSelect.value;
+//adding a plus sign turns your value from a string into a number
+let ticketPrice = +movieSelect.value;
 
-console.log(ticketPrice);
+movieSelect.addEventListener('change', e => {
+    ticketPrice = +e.target.value;
+    updateSelectedCount();
+
+})
+
+function updateSelectedCount() {
+    const selectedSeats = document.querySelectorAll('.row .seat.selected');
+
+    const selectedSeatsCount = selectedSeats.length;
+    count.innerText = selectedSeatsCount;
+    total.innerText = selectedSeatsCount * ticketPrice;
+
+
+}
+//it is more performant to grab the container instead of the seats
+container.addEventListener('click', (e) => {
+    if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
+        e.target.classList.toggle('selected');
+        updateSelectedCount();
+    }
+})
+
