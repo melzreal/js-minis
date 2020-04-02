@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto Slab', serif;
-    background-color: #0d1f50;
+    background-color: #FAE7BC;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-    color: #fff;
+    color: #000;
 }
 
 .screen {
@@ -46,13 +46,16 @@ h1 {
 }
 
 .controls .fa-play {
-    color: #fff;
+    color: #CAE4BF;
 }
 .controls .fa-stop {
+    color: #F28B7A;
+}
+.controls .fa-volume-up {
     color: #fff;
 }
 .controls .fa-pause {
-    color: #fff;
+    color: #FBAB76;
 }
 
 .btn:focus {
