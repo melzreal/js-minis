@@ -10,6 +10,10 @@ function toggleVideoStatus() {
     video.paused ? video.play() : video.pause();
 }
 
+function toggleSound() {
+    video.volume == 1 ? video.volume = 0 : video.volume = 1;
+}
+
 function updatePlayIcon() {
     video.paused ? play.innerHTML = `<i class="fa fa-play fa-2x"></i>` :
         play.innerHTML = `<i class="fa fa-pause fa-2x"></i>`;
@@ -48,6 +52,7 @@ video.addEventListener('timeupdate', updateProgress);
 
 play.addEventListener('click', toggleVideoStatus);
 stop.addEventListener('click', stopVideo);
+volume.addEventListener('click', toggleSound);
 progress.addEventListener('change', setVideoProgress);
 
 
