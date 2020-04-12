@@ -38,6 +38,20 @@ function searchMeal(e){
 
 }
 
+function randomMeal(){
+    mealsEl.innerHTML = '';
+    resultHeading.innerHTML = '';
+
+    fetch(`https://www.themealdb.com/api/json/v1/1/random.php
+    `)
+    .then(data => data.json())
+    .then(res => {
+        const meal = res.meals[0];           
+        addMealToDOM(meal);
+
+    })
+}
+
 function getMealByID(id){
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
         .then( data => data.json())
@@ -83,6 +97,7 @@ function addMealToDOM(meal) {
 
 
 submit.addEventListener('submit', searchMeal);
+random.addEventListener('click', randomMeal);
 
 mealsEl.addEventListener('click', e => {
     const mealInfo = e.path.find(item => {

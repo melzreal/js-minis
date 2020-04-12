@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 5 15px;
+}
+
+select {
+    width: 200px;
+    padding: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    background-color: #a7c5c3;
+}
+
+select:focus, button:focus {
+    outline: 0;
+}
+
+
+.settings-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.settings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* when we add the hide class in javascript we make the top bar go up */
+.settings.hide {
+    transform: translateY(-100%);
+}
+
+.container {
+    background-color: #7d999e;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.7);
+    position: relative;
+    text-align: center;
+    width: 600px;
+  
+}
+
+h2 {
+    color: #fff;
+    background-color: rgba(1, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 4px;  
+}
+
+h1 {
+    margin: 0;
+    padding: 20px;
+   
+}
+
+
+input {
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 300px;
+    padding: 12px 20px;
+    margin-top: 10px;
+}
+
+input:focus{
+    outline-color: #000000;
+}
+
+.score-container{
+    position: absolute;
+    top: 90px;
+    right: 20px;
+}
+
+.time-container{
+    position: absolute;
+    top: 90px;
+    left: 20px;
+}
+
+.end-game-container {
+    background-color: inherit;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+ @media (max-width: 550px){
+    .container {
+    
+        width: 300px;
+      
+    }
+
+    input{
+        width: 200px;
+    }
+ }
